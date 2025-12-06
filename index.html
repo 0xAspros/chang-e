@@ -1,29 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Em Manutenção...</title>
-<style>
-    body {
-        background: #000;
-        color: #ff0000;
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        text-align: center;
-        font-size: 32px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Em Manutenção</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+        :root {
+            --bg-dark: #0b0f19;       /* Preto azulado */
+            --blue: #2563eb;          /* Azul vibrante estilo Kirvano */
+            --text-light: #e5e7eb;    /* Cinza quase branco */
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            font-family: "Inter", sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            max-width: 450px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .loader {
+            width: 55px;
+            height: 55px;
+            border: 4px solid var(--blue);
+            border-top-color: transparent;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            animation: spin 0.9s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
 <body>
 
-<div>
-    <strong>Site em manutenção</strong><br>
-    Retornaremos em breve.
-</div>
+    <div class="container">
+        <div class="loader"></div>
+
+        <h1>Estamos em Manutenção</h1>
+        <p>Estamos trabalhando para melhorar sua experiência.  
+           Voltaremos em alguns instantes.</p>
+
+        <footer>© 2025 — Todos os direitos reservados.</footer>
+    </div>
 
 </body>
 </html>
